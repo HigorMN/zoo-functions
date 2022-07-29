@@ -1,5 +1,7 @@
 const data = require('../data/zoo_data');
 
+const { prices } = data;
+
 function countEntrants(entrants) {
   const child = entrants.filter((elemento) => elemento.age < 18);
   const adult = entrants.filter(
@@ -26,9 +28,9 @@ function calculateEntry(entrants) {
     return 0;
   }
   const fun = countEntrants(entrants);
-  const child = fun.child * 20.99;
-  const adult = fun.adult * 49.99;
-  const senior = fun.senior * 24.99;
+  const child = fun.child * prices.child;
+  const adult = fun.adult * prices.adult;
+  const senior = fun.senior * prices.senior;
 
   return child + adult + senior;
 }
