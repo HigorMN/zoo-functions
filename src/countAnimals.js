@@ -12,11 +12,13 @@ function countAnimals(animal) {
     }
     return findSpecie.residents.length;
   }
-  const count = {};
-  organized.forEach((element) => {
-    count[element.name] = element.residents.length;
-  });
-  return count;
+  const allAnimals = organized.reduce((acc, curr) => {
+    if(!acc[curr.name]){
+      acc[curr.name] = curr.residents.length
+    }
+    return acc
+  }, {})
+  return allAnimals;
 }
 
 module.exports = countAnimals;
