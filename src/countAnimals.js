@@ -13,11 +13,11 @@ function countAnimals(animal) {
     return findSpecie.residents.length;
   }
   const allAnimals = organized.reduce((acc, curr) => {
-    if(!acc[curr.name]){
-      acc[curr.name] = curr.residents.length
+    if (!acc[curr.name]) {
+      acc[curr.name] = curr.residents.length;
     }
-    return acc
-  }, {})
+    return acc;
+  }, {});
   return allAnimals;
 }
 
