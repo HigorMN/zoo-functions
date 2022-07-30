@@ -66,20 +66,17 @@ function getAll() {
 }
 
 function getEmployeesCoverage(objeto) {
-
   if (typeof objeto !== 'undefined') {
-    const { name, id } = objeto;
-    const iD = getID(objeto)
-    const names = getName(objeto)
+    const { name } = objeto;
+    const iD = getID(objeto);
+    const names = getName(objeto);
+    if (JSON.stringify(getID(objeto)) === '{}') {
+      throw new Error('Informações inválidas');
+    }
     if (typeof name !== 'undefined') {
       return names;
     }
-    if(JSON.stringify(names) === '{}' || JSON.stringify(iD) === '{}'){
-      throw  new  Error('Informações inválidas');
-    }
-    if (typeof id !== 'undefined') {
-      return iD;
-    }
+    return iD;
   }
   return getAll();
 }
