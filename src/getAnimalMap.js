@@ -64,6 +64,7 @@ const objetcFemale = () =>
     }
     return acc;
   }, {});
+
 const objetcFemaleSorted = () =>
   species.reduce((acc, curr) => {
     if (!acc[curr.location]) {
